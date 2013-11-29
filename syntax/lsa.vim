@@ -13,8 +13,16 @@ elseif exists("b:current_syntax")
 endif
 
 
-syn keyword lsaStatement Icon ICON NOT NULL PK SK GK return exclude NOTAB Static Slave Manual Select RowName WhenEmpty access granted denied writable readonly not_referencible Name WIDTH RDBMS rdbmspp LEN java_gui_def java_gui MYSQL XMLVALIDATOR XMLTYPE SVALIDATOR XMLTYPE ENCRYPT DBLEN COLOR
-syn keyword lsaType Int INT INT_POSITIVE Double DOUBLE STR DATE TIME ID NAME BOOL MONEY STRA STR10 STR20 STR30 STR40 STR60 STR80 ENUM all
+syn keyword lsaStatement Icon ICON NOT NULL PK SK GK return exclude NOTAB
+syn keyword lsaStatement Static Slave Manual Select RowName WhenEmpty
+syn keyword lsaStatement access granted denied writable readonly audit not_referencible
+syn keyword lsaStatement Name WIDTH RDBMS rdbmspp LEN java_gui_def java_gui MYSQL
+syn keyword lsaStatement XMLVALIDATOR XMLTYPE SVALIDATOR XMLTYPE ENCRYPT DBLEN COLOR
+
+syn keyword lsaType Int INT INT_POSITIVE INT_NON_NEGATIVE ENTITY_ID ID ENUM
+syn keyword lsaType Double DOUBLE DATE TIME NAME BOOL MONEY STRA all
+syntax match lsaType /\m\<STR\d*\>/
+
 syn keyword lsaStorageClass UnArch Abstract Virtual Internal const
 syn keyword lsaStatement Class Attributes Methods Views DataWindow Window Folder Groups
 syn keyword lsaInclude parent embed
